@@ -41,6 +41,10 @@ const PintarDB = () => {
   }
 };
 
+const EliminarDB = (plato) => {
+  console.log(plato);
+};
+
 formularioUI.addEventListener("submit", (e) => {
   e.preventDefault();
   let actividadUI = document.querySelector("#actividad").value;
@@ -55,4 +59,13 @@ document.addEventListener("DOMContentLoaded", PintarDB);
 listaPlatosUI.addEventListener("click", (e) => {
   e.preventDefault();
   console.log(e);
+  console.log(e.target);
+  if (e.target.innerHTML === "done" || e.target.innerHTML === "delete") {
+    console.log("accion del done");
+    if (e.target.innerHTML === "delete") {
+      EliminarDB(texto);
+    }
+    if (e.target.innerHTML === "done") {
+    }
+  }
 });
